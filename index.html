@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="media/logo_sol.png" />
+  <title>Brownies&amp;Co by Chantilly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/builder.css" />
+  <link rel="stylesheet" href="css/cart.css" />
+  <link rel="stylesheet" href="css/checkout.css" />
+  <link rel="stylesheet" href="css/legal.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-script">Brownies</span><span class="logo-amp">&amp;</span><span class="logo-script">Co.</span><span class="logo-co">by Chanti</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#cataleg">Cataleg</a></li>
+        <li><a href="#personalitza">Personalitza</a></li>
+        <li><a href="#nosaltres">Qui soc?</a></li>
+        <li><a href="#contacte">Contacte</a></li>
+      </ul>
+      <button class="nav-cart-btn" id="btnOpenCart" aria-label="Obrir cistella">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        Cistella
+        <span class="cart-badge" id="cartCount">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="inici">
+    <div class="hero-blobs">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+    <div class="hero-content">
+      <p class="eyebrow">Pastisseria artesanal &middot; Camarles</p>
+      <h1 class="hero-title">El brownie<br/><em>perfecte</em><br/>es el teu.</h1>
+      <p class="hero-desc">Massa, cobertura i toppings &mdash; cada brownie fet a mida amb ingredients locals de primera qualitat.</p>
+      <div class="hero-btns">
+        <a href="#personalitza" class="btn-primary">Crea el teu brownie</a>
+        <a href="#cataleg" class="btn-outline">Veure cataleg</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="plate-wrap">
+        <div class="plate-glow"></div>
+        <div class="plate">
+          <div class="brownie-grid-hero">
+            <div class="bq bq-1">&#x1F36B;</div>
+            <div class="bq bq-2">&#x1F330;</div>
+            <div class="bq bq-3">&#x1F353;</div>
+            <div class="bq bq-4">&#x2728;</div>
+          </div>
+        </div>
+        <div class="float-pill pill-1">&#x1F36B; Xocolata belga</div>
+        <div class="float-pill pill-2">&#x1F33F; 100% artesanal</div>
+        <div class="float-pill pill-3">&#x2764;&#xFE0F; Fet a ma</div>
+        <div class="hero-stamp">
+          <span class="stamp-from">des de</span>
+          <span class="stamp-price">4,50&euro;</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATALEG -->
+  <section class="cataleg" id="cataleg">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Els mes demanats</p>
+        <h2 class="section-title">Els nostres <em>classics</em></h2>
+        <p class="section-sub">Receptes cuidades al detall, amb xocolata d'origen unic i mantequilla de la comarca.</p>
+      </div>
+      <div class="cards-grid">
+        <article class="brownie-card" id="card-classic">
+          <div class="card-img img-chocolate">
+            <span class="card-emoji">&#x1F36B;</span>
+            <span class="card-ribbon">Bestseller</span>
+          </div>
+          <div class="card-body">
+            <h3>Classic de Xocolata</h3>
+            <p>Massa de xocolata negra 70% amb nous. Cruixent per fora, humit per dins.</p>
+            <div class="card-foot">
+              <strong class="price">4,50 &euro;</strong>
+              <button class="btn-add" data-name="Classic de Xocolata" data-price="4.50" data-emoji="&#x1F36B;" data-detail="Xocolata negra 70%, nous &middot; Cruixent per fora, humit per dins">+ Afegir</button>
+            </div>
+          </div>
+        </article>
+        <article class="brownie-card" id="card-caramel">
+          <div class="card-img img-caramel">
+            <span class="card-emoji">&#x1F36F;</span>
+          </div>
+          <div class="card-body">
+            <h3>Salted Caramel</h3>
+            <p>Cor liquid de salsa de caramel i fleur de sel de Camarga.</p>
+            <div class="card-foot">
+              <strong class="price">5,20 &euro;</strong>
+              <button class="btn-add" data-name="Salted Caramel" data-price="5.20" data-emoji="&#x1F36F;" data-detail="Cor liquid de caramel &middot; Fleur de sel de Camarga">+ Afegir</button>
+            </div>
+          </div>
+        </article>
+        <article class="brownie-card" id="card-maduixa">
+          <div class="card-img img-strawberry">
+            <span class="card-emoji">&#x1F353;</span>
+            <span class="card-ribbon new-tag">Nou!</span>
+          </div>
+          <div class="card-body">
+            <h3>Maduixa &amp; Crema</h3>
+            <p>Crema de formatge Philadelphia amb maduixes fresques de temporada.</p>
+            <div class="card-foot">
+              <strong class="price">5,50 &euro;</strong>
+              <button class="btn-add" data-name="Maduixa &amp; Crema" data-price="5.50" data-emoji="&#x1F353;" data-detail="Crema de formatge Philadelphia &middot; Maduixes fresques">+ Afegir</button>
+            </div>
+          </div>
+        </article>
+        <article class="brownie-card" id="card-matcha">
+          <div class="card-img img-matcha">
+            <span class="card-emoji">&#x1F375;</span>
+          </div>
+          <div class="card-body">
+            <h3>Matcha &amp; Xocolata Blanca</h3>
+            <p>Te matcha japones amb xocolata blanca i festucs cruixents.</p>
+            <div class="card-foot">
+              <strong class="price">5,80 &euro;</strong>
+              <button class="btn-add" data-name="Matcha &amp; Xocolata Blanca" data-price="5.80" data-emoji="&#x1F375;" data-detail="Te matcha japones &middot; Xocolata blanca &middot; Festucs cruixents">+ Afegir</button>
+            </div>
+          </div>
+        </article>
+        <article class="brownie-card" id="card-cacauet">
+          <div class="card-img img-peanut">
+            <span class="card-emoji">&#x1F95C;</span>
+          </div>
+          <div class="card-body">
+            <h3>Cacauet &amp; Xocolata</h3>
+            <p>La combinacio americana per excel&middot;lencia amb crema de cacauet artesanal.</p>
+            <div class="card-foot">
+              <strong class="price">5,00 &euro;</strong>
+              <button class="btn-add" data-name="Cacauet &amp; Xocolata" data-price="5.00" data-emoji="&#x1F95C;" data-detail="Crema de cacauet artesanal &middot; Chips de xocolata negra">+ Afegir</button>
+            </div>
+          </div>
+        </article>
+        <article class="brownie-card" id="card-cookies">
+          <div class="card-img img-cookies">
+            <span class="card-emoji">&#x1F36A;</span>
+          </div>
+          <div class="card-body">
+            <h3>Cookies &amp; Cream</h3>
+            <p>Massa de vainilla amb trossos de galeta Oreo i crema de vainilla.</p>
+            <div class="card-foot">
+              <strong class="price">5,30 &euro;</strong>
+              <button class="btn-add" data-name="Cookies &amp; Cream" data-price="5.30" data-emoji="&#x1F36A;" data-detail="Massa de vainilla &middot; Galeta Oreo &middot; Crema de vainilla">+ Afegir</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONALITZADOR -->
+  <section class="builder-section" id="personalitza">
+    <div class="builder-intro container">
+      <p class="eyebrow">Crea el teu</p>
+      <h2 class="section-title">Dissenya el brownie <em>perfecte</em></h2>
+      <p class="section-sub">Escull cada detall pas a pas i amb molt d'amor.</p>
+    </div>
+    <div class="builder-layout container">
+      <div class="steps-col">
+
+        <div class="step-card">
+          <div class="step-head"><span class="step-num">01</span><h3>Tria la massa</h3></div>
+          <div class="opts-grid" id="grid-massa">
+            <button class="opt selected" data-field="massa" data-name="Xocolata Negra" data-price="0"><span class="o-icon">&#x1F36B;</span><span class="o-name">Xocolata Negra</span><span class="o-price">Base</span></button>
+            <button class="opt" data-field="massa" data-name="Caramel" data-price="0.50"><span class="o-icon">&#x1F36F;</span><span class="o-name">Caramel</span><span class="o-price">+0,50&euro;</span></button>
+            <button class="opt" data-field="massa" data-name="Maduixa" data-price="0.70"><span class="o-icon">&#x1F353;</span><span class="o-name">Maduixa</span><span class="o-price">+0,70&euro;</span></button>
+            <button class="opt" data-field="massa" data-name="Matcha" data-price="0.80"><span class="o-icon">&#x1F375;</span><span class="o-name">Matcha</span><span class="o-price">+0,80&euro;</span></button>
+            <button class="opt" data-field="massa" data-name="Cacauet" data-price="0.60"><span class="o-icon">&#x1F95C;</span><span class="o-name">Cacauet</span><span class="o-price">+0,60&euro;</span></button>
+            <button class="opt" data-field="massa" data-name="Vainilla" data-price="0.50"><span class="o-icon">&#x1F90D;</span><span class="o-name">Vainilla</span><span class="o-price">+0,50&euro;</span></button>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-head"><span class="step-num">02</span><h3>Cobertura</h3></div>
+          <div class="opts-grid" id="grid-cobertura">
+            <button class="opt selected" data-field="cobertura" data-name="Sense cobertura" data-price="0"><span class="o-icon">&#x2728;</span><span class="o-name">Sense cobertura</span><span class="o-price">Inclos</span></button>
+            <button class="opt" data-field="cobertura" data-name="Ganache de Xocolata" data-price="0.80"><span class="o-icon">&#x1F36B;</span><span class="o-name">Ganache Xocolata</span><span class="o-price">+0,80&euro;</span></button>
+            <button class="opt" data-field="cobertura" data-name="Crema de Formatge" data-price="0.90"><span class="o-icon">&#x1F9C0;</span><span class="o-name">Crema Formatge</span><span class="o-price">+0,90&euro;</span></button>
+            <button class="opt" data-field="cobertura" data-name="Salsa de Caramel" data-price="0.70"><span class="o-icon">&#x1F36F;</span><span class="o-name">Salsa Caramel</span><span class="o-price">+0,70&euro;</span></button>
+            <button class="opt" data-field="cobertura" data-name="Confitura de Maduixa" data-price="0.60"><span class="o-icon">&#x1F353;</span><span class="o-name">Confitura Maduixa</span><span class="o-price">+0,60&euro;</span></button>
+            <button class="opt" data-field="cobertura" data-name="Crema de Cacauet" data-price="0.80"><span class="o-icon">&#x1F95C;</span><span class="o-name">Crema Cacauet</span><span class="o-price">+0,80&euro;</span></button>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-head"><span class="step-num">03</span><h3>Toppings <small>(seleccio multiple)</small></h3></div>
+          <div class="opts-grid toppings-grid" id="grid-toppings">
+            <button class="top-btn" data-name="Nous" data-price="0.50" data-emoji="&#x1F330;"><span class="o-icon">&#x1F330;</span><span class="o-name">Nous</span><span class="o-price">+0,50&euro;</span></button>
+            <button class="top-btn" data-name="Ametlles" data-price="0.50" data-emoji="&#x1F90D;"><span class="o-icon">&#x1F90D;</span><span class="o-name">Ametlles</span><span class="o-price">+0,50&euro;</span></button>
+            <button class="top-btn" data-name="Fleur de Sel" data-price="0.30" data-emoji="&#x1F9C2;"><span class="o-icon">&#x1F9C2;</span><span class="o-name">Fleur de Sel</span><span class="o-price">+0,30&euro;</span></button>
+            <button class="top-btn" data-name="Maduixes fresques" data-price="0.80" data-emoji="&#x1F353;"><span class="o-icon">&#x1F353;</span><span class="o-name">Maduixes</span><span class="o-price">+0,80&euro;</span></button>
+            <button class="top-btn" data-name="Chips de Xocolata" data-price="0.60" data-emoji="&#x1F36B;"><span class="o-icon">&#x1F36B;</span><span class="o-name">Chips Xocolata</span><span class="o-price">+0,60&euro;</span></button>
+            <button class="top-btn" data-name="Galeta Oreo" data-price="0.70" data-emoji="&#x1F36A;"><span class="o-icon">&#x1F36A;</span><span class="o-name">Oreo</span><span class="o-price">+0,70&euro;</span></button>
+            <button class="top-btn" data-name="Coco Ratllat" data-price="0.40" data-emoji="&#x1F965;"><span class="o-icon">&#x1F965;</span><span class="o-name">Coco Ratllat</span><span class="o-price">+0,40&euro;</span></button>
+            <button class="top-btn" data-name="Festucs" data-price="0.90" data-emoji="&#x1F49A;"><span class="o-icon">&#x1F49A;</span><span class="o-name">Festucs</span><span class="o-price">+0,90&euro;</span></button>
+            <button class="top-btn" data-name="Sucre Perlat" data-price="0.30" data-emoji="&#x2B50;"><span class="o-icon">&#x2B50;</span><span class="o-name">Sucre Perlat</span><span class="o-price">+0,30&euro;</span></button>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-head"><span class="step-num">04</span><h3>Punt de cocci</h3></div>
+          <div class="opts-grid" id="grid-punt">
+            <button class="opt selected" data-field="punt" data-name="Sucos (Estandard)" data-price="0"><span class="o-icon">&#x1F4A7;</span><span class="o-name">Sucos</span><span class="o-price">Recomanat</span></button>
+            <button class="opt" data-field="punt" data-name="Fudgy (Molt cremos)" data-price="0"><span class="o-icon">&#x1F36E;</span><span class="o-name">Fudgy</span><span class="o-price">Extra cremos</span></button>
+            <button class="opt" data-field="punt" data-name="Cruixent (Ben cuit)" data-price="0"><span class="o-icon">&#x1F525;</span><span class="o-name">Cruixent</span><span class="o-price">Vora daurada</span></button>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-head"><span class="step-num">05</span><h3>Quantitat i notes</h3></div>
+          <div class="qty-row">
+            <span class="qty-label">Unitats:</span>
+            <div class="qty-ctrl">
+              <button class="qty-btn" id="btnQtyMinus">&#x2212;</button>
+              <span class="qty-num" id="qtyDisplay">1</span>
+              <button class="qty-btn" id="btnQtyPlus">+</button>
+            </div>
+          </div>
+          <label class="note-label">Notes especials <em>(opcional)</em></label>
+          <textarea class="note-input" id="notaInput" placeholder="Ex: per a regal, sense nous per allErgia, dedicatoria especial..."></textarea>
+        </div>
+      </div>
+
+      <div class="summary-col">
+        <div class="summary-card" id="summaryCard">
+          <h3 class="summary-title">El teu brownie</h3>
+          <div class="summary-visual">
+            <div class="sv-plate">
+              <div class="sv-grid">
+                <div class="sv-bq">&#x1F36B;</div>
+                <div class="sv-bq">&#x1F36B;</div>
+                <div class="sv-bq">&#x1F36B;</div>
+                <div class="sv-bq">&#x1F36B;</div>
+              </div>
+              <div class="sv-toppings" id="svToppings"></div>
+            </div>
+          </div>
+          <ul class="summary-list">
+            <li><span class="sl-key">Massa</span><span class="sl-val" id="sumMassa">Xocolata Negra</span></li>
+            <li><span class="sl-key">Cobertura</span><span class="sl-val" id="sumCobertura">Sense cobertura</span></li>
+            <li><span class="sl-key">Toppings</span><span class="sl-val" id="sumToppings">-- Cap</span></li>
+            <li><span class="sl-key">Punt</span><span class="sl-val" id="sumPunt">Sucos</span></li>
+            <li><span class="sl-key">Quantitat</span><span class="sl-val" id="sumQty">1 unitat</span></li>
+          </ul>
+          <div class="summary-total">
+            <span>Total</span>
+            <strong id="summaryTotal">4,50 &euro;</strong>
+          </div>
+          <button class="btn-primary full" id="addToCartBtn">Afegir a la cistella</button>
+          <button class="btn-outline full" id="btnOpenCart2">Veure cistella &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUI SOC -->
+  <section class="nosaltres" id="nosaltres">
+    <div class="container nosaltres-grid">
+      <div class="nos-photo">
+        <div class="nos-photo-wrap">
+          <img src="media/bio/sonia_bio.JPG" alt="Sonia, pastissera de Brownies&amp;Co" />
+        </div>
+        <div class="nos-photo-deco">
+          <strong>Sonia</strong>
+          <span>Pastissera &amp; fundadora</span>
+        </div>
+      </div>
+      <div class="nos-text">
+        <p class="eyebrow">Qui soc?</p>
+        <h2 class="section-title">Amor per la<br/><em>xocolata de debo.</em></h2>
+        <p>Em dic Sonia i soc de Camarles. Aixo naix de moltes proves i l'obsessio per aconseguir el brownie perfecte.</p>
+        <p>Usem xocolata de cacau d'origen unic, mantequilla de la comarca i ous de granja local. Sense conservants, sense presses.</p>
+        <div class="stats-row">
+          <div class="stat"><strong>+8k</strong><span>Brownies lliurats</span></div>
+          <div class="stat"><strong>4.9 &#x2605;</strong><span>Valoracio mitjana</span></div>
+          <div class="stat"><strong>24h</strong><span>Recollida a Camarles</span></div>
+        </div>
+        <div class="pillars-grid">
+          <div class="pillar"><div class="pillar-icon">&#x1F331;</div><h4>Ingredients locals</h4><p>Proveidors locals i de qualitat</p></div>
+          <div class="pillar"><div class="pillar-icon">&#x1F932;</div><h4>100% artesanal</h4><p>Pastat i enfornat a ma cada dia</p></div>
+          <div class="pillar"><div class="pillar-icon">&#x1F4E6;</div><h4>Packaging sostenible</h4><p>Caixes de cartro reciclat, sense plastic</p></div>
+          <div class="pillar"><div class="pillar-icon">&#x1F48C;</div><h4>Regal perfecte</h4><p>Targeta personalitzada inclosa</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTE -->
+  <section class="contacte" id="contacte">
+    <div class="container contacte-grid">
+      <div class="contact-info">
+        <p class="eyebrow">Parla amb mi</p>
+        <h2 class="section-title">Tens alguna <em>pregunta?</em></h2>
+        <p>Escriu-me per whatsapp o correu electronic.</p>
+        <div class="contact-details">
+          <div class="cd-item">&#x1F4CD; C/ Vint-i-vuit, 35 &middot; Camarles</div>
+          <div class="cd-item">&#x1F4DE; +34 665 638 350</div>
+          <div class="cd-item">&#x2709;&#xFE0F; hola@browniesandco.cat</div>
+          <div class="cd-item">&#x1F550; Dl&ndash;Ds: 9:00&ndash;20:00 &middot; Dg: 10:00&ndash;14:00</div>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="form-row"><label>Nom</label><input type="text" placeholder="El teu nom" required /></div>
+        <div class="form-row"><label>Correu electronic</label><input type="email" placeholder="nom@correu.cat" required /></div>
+        <div class="form-row"><label>Missatge</label><textarea placeholder="En que et puc ajudar?" required></textarea></div>
+        <button type="submit" class="btn-primary full">Enviar missatge</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo"><span class="logo-script">Brownies</span><span class="logo-amp">&amp;</span><span class="logo-co">Co</span></div>
+        <p>Pastisseria artesanal a Camarles.<br/>Fets amb amor, un brownie cada dia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegacio</h4>
+        <a href="#cataleg">Catàleg</a>
+        <a href="#personalitza">Brownie a mida</a>
+        <a href="#nosaltres">Qui soc?</a>
+        <a href="#contacte">Contacte</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#" id="linkPrivacitat">Politica de privacitat</a>
+        <a href="#" id="linkAvis">Avis legal</a>
+        <a href="#" id="linkCookies">Politica de cookies</a>
+      </div>
+      <div class="footer-col">
+        <h4>Segueix-me</h4>
+        <a href="https://www.instagram.com/browniesandcobychantilly" target="_blank" rel="noopener">Instagram</a>
+        <a href="#" target="_blank" rel="noopener">Facebook</a>
+        <a href="#" target="_blank" rel="noopener">TikTok</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Brownies&amp;Co &middot; Tots els drets reservats &middot; Camarles, Catalunya</p>
+    </div>
+  </footer>
+
+  <!-- CISTELLA -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h2>La meva cistella</h2>
+      <button class="close-btn" id="btnCloseCart">&#x2715;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty" style="display:flex">
+        <span>&#x1F9BA;</span>
+        <p>La cistella es buida.<br/>Crea el teu brownie!</p>
+      </div>
+    </div>
+    <div class="cart-foot" id="cartFoot" style="display:none">
+      <div class="cart-total-row"><span>Total</span><strong id="cartTotalPrice">0,00 &euro;</strong></div>
+      <button class="btn-primary full" id="btnCheckout">Fer la comanda &rarr;</button>
+    </div>
+  </aside>
+
+  <!-- MODAL COMANDA -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="checkoutModal">
+      <div id="checkoutForm">
+        <div class="modal-head">
+          <h2>Fer la comanda</h2>
+          <button class="close-btn" id="btnCloseCheckout">&#x2715;</button>
+        </div>
+        <div class="modal-body">
+          <p class="modal-intro">Omple el formulari i t'enviarem el resum per correu. Per confirmar la comanda, fes un <strong>Bizum a l'import total</strong> al numero <strong class="bizum-highlight">+34 665 638 350</strong> indicant el teu nom com a concepte.</p>
+          <div class="bizum-box">
+            <div class="bizum-icon">&#x1F4B8;</div>
+            <div class="bizum-text">
+              <strong>Pagament per Bizum</strong>
+              <p>Envia l'import al <strong>+34 665 638 350</strong> amb el concepte: el teu nom complet. La comanda es confirmara en rebre el pagament.</p>
+            </div>
+          </div>
+          <h3 class="form-section-title">Dades de contacte</h3>
+          <div class="form-row"><label>Nom complet *</label><input type="text" id="fNom" placeholder="Maria Garcia Lopez" /></div>
+          <div class="form-grid-2">
+            <div class="form-row"><label>Telefon *</label><input type="tel" id="fTelefon" placeholder="600 000 000" /></div>
+            <div class="form-row"><label>Correu electronic *</label><input type="email" id="fEmail" placeholder="maria@correu.cat" /></div>
+          </div>
+          <h3 class="form-section-title">Tipus de lliurament</h3>
+          <div class="delivery-opts">
+            <label class="delivery-opt selected" id="dOptEnvio">
+              <input type="radio" name="delivery" value="envio" checked />
+              <div class="d-icon">&#x1F69A;</div>
+              <div><strong>Enviament a domicili</strong><span>+3,50 &euro; &middot; Camarles i rodalies</span></div>
+            </label>
+            <label class="delivery-opt" id="dOptBotiga">
+              <input type="radio" name="delivery" value="botiga" />
+              <div class="d-icon">&#x1F3EA;</div>
+              <div><strong>Recollida a casa</strong><span>Gratuit &middot; C/ Vint-i-vuit, 35</span></div>
+            </label>
+          </div>
+          <div id="addressBlock">
+            <div class="form-row"><label>Adreca d'entrega *</label><input type="text" id="fAdreca" placeholder="Carrer Major, 15, 2n 1a" /></div>
+            <div class="form-grid-2">
+              <div class="form-row"><label>Codi postal</label><input type="text" id="fCP" placeholder="43580" /></div>
+              <div class="form-row"><label>Localitat</label><input type="text" id="fCiutat" placeholder="Camarles" /></div>
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-row"><label>Data de lliurament *</label><input type="date" id="fData" /></div>
+            <div class="form-row"><label>Franja horaria</label>
+              <select id="fFranja">
+                <option>Mati (9:00 - 13:00)</option>
+                <option>Tarda (15:00 - 19:00)</option>
+                <option>Sense preferencia</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row"><label>Notes addicionals</label><textarea id="fNotes" placeholder="Deixar a la porteria, trucada abans de pujar..."></textarea></div>
+          <div class="modal-total-box">
+            <div class="mt-row"><span>Subtotal productes</span><span id="modalSubtotal">0,00 &euro;</span></div>
+            <div class="mt-row"><span>Enviament</span><span id="modalEnviament">3,50 &euro;</span></div>
+            <div class="mt-divider"></div>
+            <div class="mt-row mt-total"><span>TOTAL A PAGAR</span><strong id="modalTotal">0,00 &euro;</strong></div>
+          </div>
+        </div>
+        <div class="modal-foot">
+          <button class="btn-outline" id="btnCancelCheckout">Cancel&#xB7;lar</button>
+          <button class="btn-primary" id="btnConfirmOrder">Confirmar comanda &rarr;</button>
+        </div>
+      </div>
+      <div id="successScreen" style="display:none">
+        <div class="success-wrap">
+          <div class="success-anim">&#x1F389;</div>
+          <h2>Comanda enviada!</h2>
+          <p>Hem rebut la teva comanda i t'hem enviat un resum per correu electronic.</p>
+          <div class="order-num" id="orderNum">#BC-0000</div>
+          <div class="bizum-reminder">
+            <strong>Recorda fer el Bizum per confirmar</strong>
+            <p>Envia <strong id="successTotal">0,00 &euro;</strong> al <strong>+34 665 638 350</strong><br/>Concepte: <em id="successNom">el teu nom</em></p>
+          </div>
+          <p class="success-contact">Dubtes: <a href="mailto:hola@browniesandco.cat">hola@browniesandco.cat</a></p>
+          <button class="btn-primary" id="btnResetAll">Fer una altra comanda</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL LEGAL -->
+  <div id="modalLegal" style="display:none;position:fixed;inset:0;z-index:500;background:rgba(93,58,30,0.45);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:1rem;">
+    <div style="background:#FDFAF7;width:100%;max-width:660px;max-height:88vh;border-radius:16px;box-shadow:0 20px 60px rgba(93,58,30,0.2);display:flex;flex-direction:column;overflow:hidden;">
+      <div style="padding:1.4rem 2rem;border-bottom:1px solid #EDD9C0;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;">
+        <div>
+          <div style="font-size:0.68rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#E8889A;margin-bottom:0.3rem;">Legal</div>
+          <h2 id="legalTitol" style="font-family:'Libre Baskerville',serif;font-size:1.35rem;font-weight:700;color:#5C3A1E;"></h2>
+        </div>
+        <button id="btnTancarLegal" style="background:none;border:none;font-size:1.4rem;cursor:pointer;color:#7A5540;">&#x2715;</button>
+      </div>
+      <div id="legalCos" style="padding:2rem;overflow-y:auto;flex:1;font-family:'Jost',sans-serif;font-size:0.88rem;color:#7A5540;line-height:1.8;"></div>
+      <div style="padding:1rem 2rem;border-top:1px solid #EDD9C0;background:#FAF6F0;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;flex-wrap:wrap;gap:0.5rem;">
+        <span style="font-size:0.72rem;color:#B89880;">&copy; 2025 Brownies&amp;Co &middot; Camarles</span>
+        <div id="legalAltres" style="display:flex;gap:1rem;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <!-- SCRIPTS: al final del body, el DOM ja esta llest -->
+  <script src="js/state.js"></script>
+  <script src="js/builder.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/checkout.js"></script>
+  <script src="js/ui.js"></script>
+  <script>
+
+  // ── TEXTOS LEGALS ──
+  var textosLegals = {
+    privacitat: {
+      titol: "Politica de Privacitat",
+      cos: `
+        <p style="background:#FDE8EC;border:1px solid #F4A7B5;border-radius:30px;display:inline-block;padding:0.3rem 1rem;font-size:0.72rem;margin-bottom:1.2rem;">Data: juny 2025</p>
+        <h3 style="font-family:'Libre Baskerville',serif;color:#5C3A1E;margin:1.5rem 0 0.5rem;padding-bottom:0.3rem;border-bottom:1px dashed #EDD9C0;">1. Responsable del tractament</h3>
+        <p>La responsable es <strong>Sonia [Cognom]</strong>, C/ Vint-i-vuit, 35, Camarles. Contacte: <a href="mailto:hola@browniesandco.cat" style="color:#E8889A;">hola@browniesandco.cat</a></p>
+        <h3 style="font-family:'Libre Baskerville',serif;color:#5C3A1E;margin:1.5rem 0 0.5rem;padding-bottom:0.3rem;border-bottom:1px dashed #EDD9C0;">2. Quines dades recollim?</h3>
+        <p>Quan fas una comanda recollim: nom i cognoms, correu electronic, telefon, adreca postal i notes. No recollim dades bancaries, el pagament es fa per Bizum entre particulars.</p>
+        <h3 style="font-family:'Libre Baskerville',serif;color:#5C3A1E;margin:1.5rem 0 0.5rem;padding-bottom:0.3rem;border-bottom:1px dashed #EDD9C0;">3. Finalitat</h3>
+        <p><strong>Gestio de comandes:</strong> preparar i lliurar el teu encarrec. <strong>Comunicacio:</strong> respondre missatges i enviar confirmacio. <strong>Obligacions legals:</strong> complir amb les obligacions fiscals.</p>
+        <h3 style="font-family:'Libre Baskerville',serif;color:#5C3A1E;margin:1.5rem 0 0.5rem;padding-bottom:0.3rem;border-bottom:1px dashed #EDD9C0;">4. Conservacio de dades</h3>
+        <p>Les dades es conserven el temps necessari per gestionar la comanda i complir les obligacions legals (generalment 5 anys).</p>
+        <h3 style="font-family:'Libre Baskerville',serif;color:#5C3A1E;margin:1.5rem 0 0.5rem;padding-bottom:0.3rem;border-bottom:1px dashed #EDD9C0;">5. Els teus drets</h3>
+        <p>Pots exercir els teus drets d'acces, rectificacio, supressio i oposicio escrivint a <a href="mailto:hola@browniesandco.cat" style="color:#E8889A;">hola@browniesandco.cat</a>. Pots reclamar davant l'<a href="https://www.aepd.es" target="_blank" style="color:#E8889A;">AEPD</a>.</p>
+      `
+    },
+    avis: {
+      titol: "Avis Legal",
+      cos: `
+        <p style="background:#FDE8EC;border:1px solid #F4A7B5;border-radius:30px;display:inline-block;padding:0.3rem 1rem;font-size:0.72rem;margin-bottom:1.2rem;">Data: juny 2025</p>
+        <h3 style="font-family:'Libre Baskerville',serif;color:#5C3A1E;margin:1.5rem 0 0.5rem;padding-bottom:0.3rem;border-bottom:1px dashed #EDD9C0;">1. Titular del lloc web</h3>
+        <p><strong>Sonia [Cognom]</strong> · C/ Vint-i-vuit, 35, Camarles (Tarragona) · Tel: +34 665 638 350 · <a href="mailto:hola@browniesandco.cat" style="color:#E8889A;">hola@browniesandco.cat</a></p>
+        <h3 style="font-family:'Libre Baskerville',serif;color:#5C3A1E;margin:1.5rem 0 0.5rem;padding-bottom:0.3rem;border-bottom:1px dashed #EDD9C0;">2. Propietat intel·lectual</h3>
+        <p>Tots els continguts (textos, imatges, disseny i codi) son propietat de Sonia [Cognom]. Queda prohibida la reproduccio sense autoritzacio expressa.</p>
+        <h3 style="font-family:'Libre Baskerville',serif;color:#5C3A1E;margin:1.5rem 0 0.5rem;padding-bottom:0.3rem;border-bottom:1px dashed #EDD9C0;">3. Condicions de les comandes</h3>
+        <p>La comanda es confirma un cop rebut el pagament per Bizum. Els preus inclouen IVA. La zona de repartiment es limita a Camarles i rodalies. Cancel·lacions amb menys de 24h no garanteixen devolucio. Si la comanda no pot preparar-se per forca major, es retornara l'import integre.</p>
+        <h3 style="font-family:'Libre Baskerville',serif;color:#5C3A1E;margin:1.5rem 0 0.5rem;padding-bottom:0.3rem;border-bottom:1px dashed #EDD9C0;">4. Al·lergies</h3>
+        <p>Els productes s'elaboren en un obrador casolà on es manipulen <strong>fruits secs, gluten, lactis i ous</strong>. Indica qualsevol al·lergia a les notes de la comanda.</p>
+        <h3 style="font-family:'Libre Baskerville',serif;color:#5C3A1E;margin:1.5rem 0 0.5rem;padding-bottom:0.3rem;border-bottom:1px dashed #EDD9C0;">5. Llei aplicable</h3>
+        <p>Aquest avis legal es regeix per la legislacio espanyola.</p>
+      `
+    },
+    cookies: {
+      titol: "Politica de Cookies",
+      cos: `
+        <p style="background:#FDE8EC;border:1px solid #F4A7B5;border-radius:30px;display:inline-block;padding:0.3rem 1rem;font-size:0.72rem;margin-bottom:1.2rem;">Data: juny 2025</p>
+        <h3 style="font-family:'Libre Baskerville',serif;color:#5C3A1E;margin:1.5rem 0 0.5rem;padding-bottom:0.3rem;border-bottom:1px dashed #EDD9C0;">Cookies que utilitzem</h3>
+        <p>El lloc web de Brownies&amp;Co <strong>no utilitza cookies de seguiment, analitica ni publicitat</strong>. No installem cap cookie de tercers.</p>
+        <p>L'unic emmagatzematge que es produeix es tecnic i temporal (la cistella de la compra mentre navegues). Aquestes dades s'eliminen en tancar el navegador.</p>
+        <h3 style="font-family:'Libre Baskerville',serif;color:#5C3A1E;margin:1.5rem 0 0.5rem;padding-bottom:0.3rem;border-bottom:1px dashed #EDD9C0;">Cookies de tercers</h3>
+        <p>Aquest lloc web no carrega contingut de tercers que pugui generar cookies. Els enllacos a Instagram obren una nova pestanya i no transmeten dades des d'aquesta web.</p>
+        <h3 style="font-family:'Libre Baskerville',serif;color:#5C3A1E;margin:1.5rem 0 0.5rem;padding-bottom:0.3rem;border-bottom:1px dashed #EDD9C0;">Com gestionar les cookies</h3>
+        <p>Pots configurar el teu navegador: <a href="https://support.google.com/chrome/answer/95647" target="_blank" style="color:#E8889A;">Chrome</a> · <a href="https://support.mozilla.org/ca/kb/cookies-informacio-que-els-llocs-web-emmagatzemen" target="_blank" style="color:#E8889A;">Firefox</a> · <a href="https://support.apple.com/ca-es/guide/safari/sfri11471/mac" target="_blank" style="color:#E8889A;">Safari</a></p>
+        <h3 style="font-family:'Libre Baskerville',serif;color:#5C3A1E;margin:1.5rem 0 0.5rem;padding-bottom:0.3rem;border-bottom:1px dashed #EDD9C0;">Contacte</h3>
+        <p>Per a consultes: <a href="mailto:hola@browniesandco.cat" style="color:#E8889A;">hola@browniesandco.cat</a></p>
+      `
+    }
+  };
+
+  function mostrarLegal(pagina) {
+    var data = textosLegals[pagina];
+    document.getElementById("legalTitol").textContent = data.titol;
+    document.getElementById("legalCos").innerHTML = data.cos;
+    document.getElementById("legalCos").scrollTop = 0;
+    var etiquetes = {privacitat:"Privacitat", avis:"Avis Legal", cookies:"Cookies"};
+    var altres = document.getElementById("legalAltres");
+    altres.innerHTML = "";
+    Object.keys(etiquetes).forEach(function(key) {
+      if (key !== pagina) {
+        var btn = document.createElement("button");
+        btn.textContent = etiquetes[key];
+        btn.style.cssText = "background:none;border:none;font-size:0.75rem;color:#E8889A;text-decoration:underline;cursor:pointer;";
+        btn.onclick = function() { mostrarLegal(key); };
+        altres.appendChild(btn);
+      }
+    });
+    document.getElementById("modalLegal").style.display = "flex";
+    document.body.style.overflow = "hidden";
+  }
+
+  function tancarLegal() {
+    document.getElementById("modalLegal").style.display = "none";
+    document.body.style.overflow = "";
+  }
+
+  document.getElementById("modalLegal").addEventListener("click", function(e) {
+    if (e.target === this) tancarLegal();
+  });
+
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape" && document.getElementById("modalLegal").style.display === "flex") tancarLegal();
+  });
+
+
+  // ── Event listeners centralitzats (sense onclick inline) ──
+  document.addEventListener("DOMContentLoaded", function() {
+
+    // Navbar
+    document.getElementById("btnOpenCart").addEventListener("click", openCart);
+    document.getElementById("hamburger").addEventListener("click", toggleMenu);
+
+    // Cistella
+    document.getElementById("cartOverlay").addEventListener("click", closeCart);
+    document.getElementById("btnCloseCart").addEventListener("click", closeCart);
+    document.getElementById("btnCheckout").addEventListener("click", openCheckout);
+
+    // Checkout
+    document.getElementById("btnCloseCheckout").addEventListener("click", closeCheckout);
+    document.getElementById("btnCancelCheckout").addEventListener("click", closeCheckout);
+    document.getElementById("btnConfirmOrder").addEventListener("click", confirmOrder);
+    document.getElementById("btnResetAll").addEventListener("click", resetAll);
+
+    // Lliurament
+    document.getElementById("dOptEnvio").addEventListener("click", function() { selectDelivery("envio", 3.50); });
+    document.getElementById("dOptBotiga").addEventListener("click", function() { selectDelivery("botiga", 0); });
+
+    // Builder - summary open cart
+    document.getElementById("btnOpenCart2").addEventListener("click", openCart);
+    document.getElementById("addToCartBtn").addEventListener("click", addToCart);
+
+    // Quantitat
+    document.getElementById("btnQtyMinus").addEventListener("click", function() { changeQty(-1); });
+    document.getElementById("btnQtyPlus").addEventListener("click", function() { changeQty(1); });
+
+    // Opcions massa/cobertura/punt
+    document.querySelectorAll(".opt[data-field]").forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        var field = this.getAttribute("data-field");
+        var name  = this.getAttribute("data-name");
+        var price = parseFloat(this.getAttribute("data-price"));
+        var grid  = this.closest(".opts-grid");
+        grid.querySelectorAll(".opt").forEach(function(b) { b.classList.remove("selected"); });
+        this.classList.add("selected");
+        brownieState[field] = { name: name, price: price };
+        updateSummary();
+      });
+    });
+
+    // Toppings
+    document.querySelectorAll(".top-btn").forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        var name  = this.getAttribute("data-name");
+        var price = parseFloat(this.getAttribute("data-price"));
+        var emoji = this.getAttribute("data-emoji");
+        this.classList.toggle("selected");
+        var idx = brownieState.toppings.findIndex(function(t) { return t.name === name; });
+        if (idx > -1) { brownieState.toppings.splice(idx, 1); }
+        else { brownieState.toppings.push({ name: name, price: price, emoji: emoji }); }
+        updateToppingPreview();
+        updateSummary();
+      });
+    });
+
+    // Cataleg - afegir a cistella
+    document.querySelectorAll(".btn-add[data-name]").forEach(function(btn) {
+      btn.addEventListener("click", function(e) {
+        e.stopPropagation();
+        var name  = this.getAttribute("data-name");
+        var price = parseFloat(this.getAttribute("data-price"));
+        var emoji = this.getAttribute("data-emoji");
+        var detail = this.getAttribute("data-detail");
+        cart.push({ id: Date.now(), type: "quick", name: name, detail: detail, emoji: emoji, qty: 1, price: price, nota: "" });
+        updateCartUI();
+        showToast(name + " afegit!");
+      });
+    });
+
+    // Legal
+    document.getElementById("linkPrivacitat").addEventListener("click", function(e) { e.preventDefault(); mostrarLegal("privacitat"); });
+    document.getElementById("linkAvis").addEventListener("click", function(e) { e.preventDefault(); mostrarLegal("avis"); });
+    document.getElementById("linkCookies").addEventListener("click", function(e) { e.preventDefault(); mostrarLegal("cookies"); });
+    document.getElementById("btnTancarLegal").addEventListener("click", tancarLegal);
+    document.getElementById("modalLegal").addEventListener("click", function(e) { if (e.target === this) tancarLegal(); });
+
+    // Contacte
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      showToast("Missatge enviat! T'escrivim aviat");
+      this.reset();
+    });
+
+    // Escape
+    document.addEventListener("keydown", function(e) {
+      if (e.key !== "Escape") return;
+      if (document.getElementById("modalLegal").style.display === "flex") { tancarLegal(); return; }
+      if (document.getElementById("modalOverlay").classList.contains("open")) { closeCheckout(); return; }
+      if (document.getElementById("cartPanel").classList.contains("open")) { closeCart(); }
+    });
+
+    // Navbar scroll
+    window.addEventListener("scroll", function() {
+      document.getElementById("navbar").classList.toggle("scrolled", window.scrollY > 20);
+    }, { passive: true });
+
+    // Inicialitzar
+    updateSummary();
+    updateCartUI();
+
+    // Animacions scroll
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".brownie-card, .step-card, .pillar, .stat, .nos-text").forEach(function(el) {
+      el.classList.add("fade-observe");
+      observer.observe(el);
+    });
+
+  }); // fi DOMContentLoaded
+  </script>
+
+</body>
+</html>
