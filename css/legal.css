@@ -49,7 +49,7 @@
   flex-shrink: 0;
   background: var(--white);
 }
-.legal-head-text {}
+/* .legal-head-text {} */
 .legal-head-tag {
   font-family: 'Jost', sans-serif;
   font-size: 0.68rem;
