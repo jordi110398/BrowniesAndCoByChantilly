@@ -5,7 +5,7 @@
 
 function selectOption(btn, field, name, price) {
   var grid = btn.closest('.opts-grid');
-  grid.querySelectorAll('.opt').forEach(function(b) { b.classList.remove('selected'); });
+  grid.querySelectorAll('.opt').forEach(function (b) { b.classList.remove('selected'); });
   btn.classList.add('selected');
   brownieState[field] = { name: name, price: price };
   updateSummary();
@@ -13,7 +13,7 @@ function selectOption(btn, field, name, price) {
 
 function toggleTopping(btn, name, price, emoji) {
   btn.classList.toggle('selected');
-  var idx = brownieState.toppings.findIndex(function(t) { return t.name === name; });
+  var idx = brownieState.toppings.findIndex(function (t) { return t.name === name; });
   if (idx > -1) {
     brownieState.toppings.splice(idx, 1);
   } else {
@@ -34,7 +34,7 @@ function updateToppingPreview() {
   var container = document.getElementById('svToppings');
   if (!container) return;
   container.innerHTML = '';
-  brownieState.toppings.forEach(function(t) {
+  brownieState.toppings.forEach(function (t) {
     var span = document.createElement('span');
     span.className = 'sv-topping';
     span.textContent = t.emoji;
@@ -47,22 +47,48 @@ function updateSummary() {
     var el = document.getElementById(id);
     if (el) el.textContent = val;
   }
-  set('sumMassa',     brownieState.massa.name);
+  set('sumMassa', brownieState.massa.name);
   set('sumCobertura', brownieState.cobertura.name);
-  set('sumToppings',  brownieState.toppings.length
-    ? brownieState.toppings.map(function(t) { return t.name; }).join(', ')
+  set('sumToppings', brownieState.toppings.length
+    ? brownieState.toppings.map(function (t) { return t.name; }).join(', ')
     : '— Cap');
-  set('sumPunt',      brownieState.punt.name.split(' ')[0]);
-  set('sumQty',       brownieState.qty + (brownieState.qty === 1 ? ' unitat' : ' unitats'));
+  set('sumPunt', brownieState.punt.name.split(' ')[0]);
+  set('sumQty', brownieState.qty + (brownieState.qty === 1 ? ' unitat' : ' unitats'));
   set('summaryTotal', formatPrice(calcBrowniePrice()));
+  // Actualitzar icones sobre la imatge
+  var badges = document.getElementById("summaryBadges");
+  if (badges) {
+    var items = [];
+    // Icona de la massa
+    var massaIcons = {
+      "Xocolata Negra": "🍫", "Caramel": "🍯", "Maduixa": "🍓",
+      "Matcha": "🍵", "Cacauet": "🥜", "Vainilla": "🤍"
+    };
+    items.push(massaIcons[brownieState.massa.name] || "🍫");
+    // Icona de la cobertura
+    if (brownieState.cobertura.name !== "Sense cobertura") {
+      var coberturaIcons = {
+        "Ganache de Xocolata": "🍫", "Crema de Formatge": "🧀",
+        "Salsa de Caramel": "🍯", "Confitura de Maduixa": "🍓",
+        "Crema de Cacauet": "🥜"
+      };
+      items.push(coberturaIcons[brownieState.cobertura.name] || "✨");
+    }
+    // Icones dels toppings
+    brownieState.toppings.forEach(function (t) { items.push(t.emoji); });
+
+    badges.innerHTML = items.map(function (icon) {
+      return '<span class="summary-badge">' + icon + '</span>';
+    }).join("");
+  }
 }
 
 function addToCart() {
   var nota = document.getElementById('notaInput') ? document.getElementById('notaInput').value : '';
-  var toppingNames = brownieState.toppings.map(function(t) { return t.name; }).join(', ');
+  var toppingNames = brownieState.toppings.map(function (t) { return t.name; }).join(', ');
   var detail = brownieState.massa.name + ' \u00b7 ' + brownieState.cobertura.name +
-               (toppingNames ? ' \u00b7 ' + toppingNames : '') +
-               ' \u00b7 ' + brownieState.punt.name.split(' ')[0];
+    (toppingNames ? ' \u00b7 ' + toppingNames : '') +
+    ' \u00b7 ' + brownieState.punt.name.split(' ')[0];
   var item = {
     id: Date.now(),
     type: 'custom',
@@ -80,7 +106,7 @@ function addToCart() {
   if (btn) {
     btn.textContent = '\u2713 Afegit a la cistella!';
     btn.classList.add('added');
-    setTimeout(function() {
+    setTimeout(function () {
       btn.textContent = 'Afegir a la cistella';
       btn.classList.remove('added');
     }, 2200);

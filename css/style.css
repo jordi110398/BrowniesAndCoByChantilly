@@ -181,6 +181,25 @@ textarea, input, select { font-family: inherit; }
   gap: 0;
   flex-shrink: 0;
 }
+/* - Logo móbil */
+/* Logo mòbil */
+.nav-logo-img {
+  display: none;
+  height: 36px;
+  width: 36px;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .nav-logo-img {
+    display: block;
+  }
+  .nav-logo .logo-script,
+  .nav-logo .logo-amp,
+  .nav-logo .logo-co {
+    display: none;
+  }
+}
 .logo-script {
   font-family: 'Dancing Script', cursive;
   font-size: 1.6rem;
@@ -507,6 +526,31 @@ textarea, input, select { font-family: inherit; }
   transform: translateY(-6px);
   box-shadow: var(--shadow-md);
   border-color: var(--pink);
+}
+/* Foto de fons a les cards del catàleg */
+.card-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.85;
+  transition: opacity 0.3s, transform 0.5s;
+}
+
+.brownie-card:hover .card-bg-img {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.card-emoji {
+  position: relative;
+  z-index: 1;
+}
+
+.card-ribbon {
+  z-index: 2;
 }
 
 .card-img {
@@ -887,4 +931,175 @@ textarea, input, select { font-family: inherit; }
   .hero-title { font-size: 2.5rem; }
   .footer-inner { grid-template-columns: 1fr; }
   .stats-row { grid-template-columns: 1fr; gap: 1rem; }
+}
+/* ═══════════════════════════════════════════
+   Tallers i Esdeveniments — Secció de vídeos
+   ═══════════════════════════════════════════ */
+ 
+.tallers-section {
+  padding: 6rem 0;
+  background: var(--cream);
+  position: relative;
+}
+.tallers-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--beige-dark), transparent);
+}
+ 
+/* Pestanyes de navegació */
+.tallers-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+}
+.tallers-tab {
+  background: none;
+  border: 1.5px solid var(--beige-mid);
+  color: var(--text-mid);
+  padding: 0.7rem 2rem;
+  border-radius: 50px;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.tallers-tab:hover {
+  border-color: var(--pink-mid);
+  color: var(--pink-deep);
+}
+.tallers-tab.active {
+  background: var(--pink-deep);
+  border-color: var(--pink-deep);
+  color: white;
+}
+ 
+/* Panells de contingut */
+.tallers-panel {
+  display: none;
+}
+.tallers-panel.active {
+  display: block;
+}
+ 
+/* Graella de vídeos */
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+ 
+/* Targeta de vídeo estil reel */
+.video-card {
+  background: var(--ganache, #1a0f09);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  aspect-ratio: 9 / 16;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.video-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+ 
+.video-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+ 
+/* Overlay amb info */
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44,24,16,0.85) 0%, transparent 50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.video-card:hover .video-overlay {
+  opacity: 1;
+}
+ 
+.video-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.3rem;
+  line-height: 1.3;
+}
+.video-date {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.08em;
+}
+ 
+/* Botó play central */
+.video-play-btn {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px; height: 52px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  transition: var(--transition);
+  pointer-events: none;
+}
+.video-card:hover .video-play-btn {
+  background: white;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+.video-card.playing .video-play-btn {
+  display: none;
+}
+ 
+/* Etiqueta de categoria */
+.video-badge {
+  position: absolute;
+  top: 12px; left: 12px;
+  background: var(--pink);
+  color: var(--brown);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+}
+ 
+/* Responsive */
+@media (max-width: 768px) {
+  .videos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .tallers-tabs {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+}
+@media (max-width: 480px) {
+  .videos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

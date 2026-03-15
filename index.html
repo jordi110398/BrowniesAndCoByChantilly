@@ -33,13 +33,15 @@
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
+        <img src="media/logo_elipse.png" alt="Brownies&Co" class="nav-logo-img" />
         <span class="logo-script">Brownies</span><span class="logo-amp">&amp;</span><span
           class="logo-script">Co.</span><span class="logo-co">by Chanti</span>
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#cataleg">Catàleg</a></li>
-        <li><a href="#personalitza">Personalitza</a></li>
+        <li><a href="#personalitza">Crea el teu brownie</a></li>
         <li><a href="#nosaltres">Qui soc?</a></li>
+        <li><a href="#tallers">Tallers</a></li>
         <li><a href="#contacte">Contacte</a></li>
       </ul>
       <button class="nav-cart-btn" id="btnOpenCart" aria-label="Obrir cistella">
@@ -71,7 +73,7 @@
         qualitat.</p>
       <div class="hero-btns">
         <a href="#personalitza" class="btn-primary">Crea el teu brownie</a>
-        <a href="#cataleg" class="btn-outline">Veure cataleg</a>
+        <a href="#cataleg" class="btn-outline">Veure catàleg</a>
       </div>
     </div>
     <div class="hero-visual">
@@ -101,27 +103,29 @@
     <div class="container">
       <div class="section-header">
         <p class="eyebrow">Els mes demanats</p>
-        <h2 class="section-title">Els nostres <em>classics</em></h2>
+        <h2 class="section-title">Els nostres <em>clàssics</em></h2>
         <p class="section-sub">Receptes cuidades al detall, amb xocolata d'origen unic i mantequilla de la comarca.</p>
       </div>
       <div class="cards-grid">
         <article class="brownie-card" id="card-classic">
           <div class="card-img img-chocolate">
+            <img src="media/cataleg/classic.png" alt="Clàssic de Xocolata" class="card-bg-img" />
             <span class="card-emoji">&#x1F36B;</span>
             <span class="card-ribbon">Bestseller</span>
           </div>
           <div class="card-body">
-            <h3>Classic de Xocolata</h3>
+            <h3>Clàssic de Xocolata</h3>
             <p>Massa de xocolata negra 70% amb nous. Cruixent per fora, humit per dins.</p>
             <div class="card-foot">
               <strong class="price">4,50 &euro;</strong>
-              <button class="btn-add" data-name="Classic de Xocolata" data-price="4.50" data-emoji="&#x1F36B;"
+              <button class="btn-add" data-name="Clàssic de Xocolata" data-price="4.50" data-emoji="&#x1F36B;"
                 data-detail="Xocolata negra 70%, nous &middot; Cruixent per fora, humit per dins">+ Afegir</button>
             </div>
           </div>
         </article>
         <article class="brownie-card" id="card-caramel">
           <div class="card-img img-caramel">
+            <img src="media/cataleg/caramel.png" alt="Caramel Salat" class="card-bg-img" />
             <span class="card-emoji">&#x1F36F;</span>
           </div>
           <div class="card-body">
@@ -136,6 +140,7 @@
         </article>
         <article class="brownie-card" id="card-maduixa">
           <div class="card-img img-strawberry">
+            <img src="media/cataleg/strawberry.png" alt="Maduixa &amp; Crema" class="card-bg-img" />
             <span class="card-emoji">&#x1F353;</span>
             <span class="card-ribbon new-tag">Nou!</span>
           </div>
@@ -151,6 +156,7 @@
         </article>
         <article class="brownie-card" id="card-matcha">
           <div class="card-img img-matcha">
+            <img src="media/cataleg/matcha.png" alt="Matcha &amp; Xocolata Blanca" class="card-bg-img" />
             <span class="card-emoji">&#x1F375;</span>
           </div>
           <div class="card-body">
@@ -165,10 +171,11 @@
         </article>
         <article class="brownie-card" id="card-cacauet">
           <div class="card-img img-peanut">
+            <img src="media/cataleg/peanut.png" alt="Clàssic de cacahuet" class="card-bg-img" />
             <span class="card-emoji">&#x1F95C;</span>
           </div>
           <div class="card-body">
-            <h3>Cacauet &amp; Xocolata</h3>
+            <h3>Cookie de cacauet &amp; Xocolata</h3>
             <p>La combinacio americana per excel&middot;lencia amb crema de cacauet artesanal.</p>
             <div class="card-foot">
               <strong class="price">5,00 &euro;</strong>
@@ -179,15 +186,16 @@
         </article>
         <article class="brownie-card" id="card-cookies">
           <div class="card-img img-cookies">
+            <img src="media/cataleg/chocolate_cookies.png" alt="Cookies de crema" class="card-bg-img" />
             <span class="card-emoji">&#x1F36A;</span>
           </div>
           <div class="card-body">
-            <h3>Cookies &amp; Cream</h3>
-            <p>Massa de vainilla amb trossos de galeta Oreo i crema de vainilla.</p>
+            <h3>Cookie &amp; Chocolate</h3>
+            <p>Massa de cookies amb trossos de xocolata. (Unitat)</p>
             <div class="card-foot">
               <strong class="price">5,30 &euro;</strong>
-              <button class="btn-add" data-name="Cookies &amp; Cream" data-price="5.30" data-emoji="&#x1F36A;"
-                data-detail="Massa de vainilla &middot; Galeta Oreo &middot; Crema de vainilla">+ Afegir</button>
+              <button class="btn-add" data-name="Cookies &amp; Chocolate" data-price="5.30" data-emoji="&#x1F36A;"
+                data-detail="Massa de cookies &middot; Trossos de xocolata">+ Afegir</button>
             </div>
           </div>
         </article>
@@ -259,7 +267,7 @@
 
         <div class="step-card">
           <div class="step-head"><span class="step-num">03</span>
-            <h3>Toppings <small>(seleccio multiple)</small></h3>
+            <h3>Toppings <small>(selecció múltiple)</small></h3>
           </div>
           <div class="opts-grid toppings-grid" id="grid-toppings">
             <button class="top-btn" data-name="Nous" data-price="0.50" data-emoji="&#x1F330;"><span
@@ -294,15 +302,15 @@
 
         <div class="step-card">
           <div class="step-head"><span class="step-num">04</span>
-            <h3>Punt de cocci</h3>
+            <h3>Punt de cocció</h3>
           </div>
           <div class="opts-grid" id="grid-punt">
-            <button class="opt selected" data-field="punt" data-name="Sucos (Estandard)" data-price="0"><span
-                class="o-icon">&#x1F4A7;</span><span class="o-name">Sucos</span><span
+            <button class="opt selected" data-field="punt" data-name="Sucós (Estandard)" data-price="0"><span
+                class="o-icon">&#x1F4A7;</span><span class="o-name">Sucós</span><span
                 class="o-price">Recomanat</span></button>
-            <button class="opt" data-field="punt" data-name="Fudgy (Molt cremos)" data-price="0"><span
+            <button class="opt" data-field="punt" data-name="Fudgy (Molt cremós)" data-price="0"><span
                 class="o-icon">&#x1F36E;</span><span class="o-name">Fudgy</span><span class="o-price">Extra
-                cremos</span></button>
+                cremós</span></button>
             <button class="opt" data-field="punt" data-name="Cruixent (Ben cuit)" data-price="0"><span
                 class="o-icon">&#x1F525;</span><span class="o-name">Cruixent</span><span class="o-price">Vora
                 daurada</span></button>
@@ -311,7 +319,7 @@
 
         <div class="step-card">
           <div class="step-head"><span class="step-num">05</span>
-            <h3>Quantitat i notes</h3>
+            <h3>Quantitat i lettering</h3>
           </div>
           <div class="qty-row">
             <span class="qty-label">Unitats:</span>
@@ -321,26 +329,24 @@
               <button class="qty-btn" id="btnQtyPlus">+</button>
             </div>
           </div>
-          <label class="note-label">Notes especials <em>(opcional)</em></label>
+          <label class="note-label">Escriu la teva frase <em>(opcional)</em></label>
           <textarea class="note-input" id="notaInput"
-            placeholder="Ex: per a regal, sense nous per allErgia, dedicatoria especial..."></textarea>
+            placeholder="Ex: Happy Birthday!, T'ESTIMO, Per a Jordi,..."></textarea>
         </div>
       </div>
 
       <div class="summary-col">
         <div class="summary-card" id="summaryCard">
-          <h3 class="summary-title">El teu brownie</h3>
-          <div class="summary-visual">
-            <div class="sv-plate">
-              <div class="sv-grid">
-                <div class="sv-bq">&#x1F36B;</div>
-                <div class="sv-bq">&#x1F36B;</div>
-                <div class="sv-bq">&#x1F36B;</div>
-                <div class="sv-bq">&#x1F36B;</div>
-              </div>
-              <div class="sv-toppings" id="svToppings"></div>
+
+          <!-- Imatge de la caixa -->
+          <div class="summary-box-img">
+            <img src="media/cataleg/brownie_box.png" alt="Brownie box personalitzada" />
+            <div class="summary-box-badges" id="summaryBadges">
+              <!-- Les pastilles apareixen dinàmicament -->
             </div>
           </div>
+
+          <h3 class="summary-title">El teu brownie</h3>
           <ul class="summary-list">
             <li><span class="sl-key">Massa</span><span class="sl-val" id="sumMassa">Xocolata Negra</span></li>
             <li><span class="sl-key">Cobertura</span><span class="sl-val" id="sumCobertura">Sense cobertura</span></li>
@@ -350,10 +356,10 @@
           </ul>
           <div class="summary-total">
             <span>Total</span>
-            <strong id="summaryTotal">4,50 &euro;</strong>
+            <strong id="summaryTotal">4,50 €</strong>
           </div>
           <button class="btn-primary full" id="addToCartBtn">Afegir a la cistella</button>
-          <button class="btn-outline full" id="btnOpenCart2">Veure cistella &rarr;</button>
+          <button class="btn-outline full" id="btnOpenCart2">Veure cistella →</button>
         </div>
       </div>
     </div>
@@ -367,16 +373,16 @@
           <img src="media/bio/sonia_bio.JPG" alt="Sonia, pastissera de Brownies&amp;Co" />
         </div>
         <div class="nos-photo-deco">
-          <strong>Sonia</strong>
+          <strong>Sònia Clua Melich</strong>
           <span>Pastissera &amp; fundadora</span>
         </div>
       </div>
       <div class="nos-text">
         <p class="eyebrow">Qui soc?</p>
-        <h2 class="section-title">Amor per la<br /><em>xocolata de debo.</em></h2>
-        <p>Em dic Sonia i soc de Camarles. Aixo naix de moltes proves i l'obsessio per aconseguir el brownie perfecte.
+        <h2 class="section-title">Amor per la<br /><em>xocolata de debó.</em></h2>
+        <p>Em dic Sònia i soc de Camarles. Això naix de moltes proves i l'obsessió per aconseguir el brownie perfecte.
         </p>
-        <p>Usem xocolata de cacau d'origen unic, mantequilla de la comarca i ous de granja local. Sense conservants,
+        <p>Usem xocolata de cacau d'origen únic, mantequilla de la comarca i ous de granja local. Sense conservants,
           sense presses.</p>
         <div class="stats-row">
           <div class="stat"><strong>+8k</strong><span>Brownies lliurats</span></div>
@@ -408,6 +414,103 @@
       </div>
     </div>
   </section>
+  <!-- TALLERS I ESDEVENIMENTS -->
+  <section class="tallers-section" id="tallers">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Experiències</p>
+        <h2 class="section-title">Tallers i <em>Esdeveniments</em></h2>
+        <p class="section-sub">Aprèn a fer brownies des de zero i viu l'experiència en directe.</p>
+      </div>
+
+      <!-- Pestanyes -->
+      <div class="tallers-tabs">
+        <button class="tallers-tab active" data-tab="tallers">&#x1F373; Tallers</button>
+        <button class="tallers-tab" data-tab="esdeveniments">&#x1F4CD; Esdeveniments</button>
+      </div>
+
+      <!-- TALLERS -->
+      <div class="tallers-panel active" id="panel-tallers">
+        <div class="videos-grid">
+
+          <div class="video-card" id="vc-t1">
+            <video src="media/tallers/valentin.mp4" muted playsinline loop preload="none"
+              poster="media/tallers/valentin.png"></video>
+            <span class="video-badge">Taller de San Valentín</span>
+            <div class="video-play-btn">&#x25B6;&#xFE0F;</div>
+            <div class="video-overlay">
+              <div class="video-title">Taller de brownies per San Valentín</div>
+              <div class="video-date">2024</div>
+            </div>
+          </div>
+
+          <div class="video-card" id="vc-t2">
+            <video src="media/tallers/halloween.mp4" muted playsinline loop preload="none"
+              poster="media/tallers/halloween.png"></video>
+            <span class="video-badge">Halloween Cookie Lab!</span>
+            <div class="video-play-btn">&#x25B6;&#xFE0F;</div>
+            <div class="video-overlay">
+              <div class="video-title">Taller de decoració i toppings de Halloween</div>
+              <div class="video-date">2024</div>
+            </div>
+          </div>
+
+          <div class="video-card" id="vc-t3">
+            <video src="media/tallers/blondie.mp4" muted playsinline loop preload="none"
+              poster="media/tallers/nadal.png"></video>
+            <span class="video-badge">Taller Nadal</span>
+            <div class="video-play-btn">&#x25B6;&#xFE0F;</div>
+            <div class="video-overlay">
+              <div class="video-title">Taller especial nadalenc!</div>
+              <div class="video-date">Desembre 2024</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ESDEVENIMENTS -->
+      <div class="tallers-panel" id="panel-esdeveniments">
+        <div class="videos-grid">
+
+          <div class="video-card" id="vc-e1">
+            <video src="media/tallers/xocofusio.mp4" muted playsinline loop preload="none"
+              poster="media/tallers/xocofusio.png"></video>
+            <span class="video-badge">XOCOFUSIÓ!</span>
+            <div class="video-play-btn">&#x25B6;&#xFE0F;</div>
+            <div class="video-overlay">
+              <div class="video-title">Festival de la xocolata a Camarles</div>
+              <div class="video-date">Octubre 2024</div>
+            </div>
+          </div>
+
+          <div class="video-card" id="vc-e2">
+            <video src="media/tallers/mescla.mp4" muted playsinline loop preload="none"
+              poster="media/tallers/mescla.png"></video>
+            <span class="video-badge">MESCLA</span>
+            <div class="video-play-btn">&#x25B6;&#xFE0F;</div>
+            <div class="video-overlay">
+              <div class="video-title">Fira gastronòmica MESCLA a Deltebre</div>
+              <div class="video-date">Maig 2025</div>
+            </div>
+          </div>
+
+          <div class="video-card" id="vc-e3">
+            <video src="media/tallers/nadal.mp4" muted playsinline loop preload="none"
+              poster="media/tallers/nadal2.png"></video>
+            <span class="video-badge">Esdeveniment</span>
+            <div class="video-play-btn">&#x25B6;&#xFE0F;</div>
+            <div class="video-overlay">
+              <div class="video-title">Pop-up de Nadal</div>
+              <div class="video-date">Desembre 2024</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <!-- CONTACTE -->
   <section class="contacte" id="contacte">
@@ -415,7 +518,7 @@
       <div class="contact-info">
         <p class="eyebrow">Parla amb mi</p>
         <h2 class="section-title">Tens alguna <em>pregunta?</em></h2>
-        <p>Escriu-me per whatsapp o correu electronic.</p>
+        <p>Informa't sobre pròxims tallers, esdeveniments, concursos,... Escriu-me per whatsapp o correu electrònic.</p>
         <div class="contact-details">
           <div class="cd-item">&#x1F4CD; C/ Vint-i-vuit, 35 &middot; Camarles</div>
           <div class="cd-item">&#x1F4DE; +34 665 638 350</div>
@@ -497,7 +600,8 @@
         <div class="modal-body">
           <p class="modal-intro">Omple el formulari i t'enviarem el resum per correu. Per confirmar la comanda, fes un
             <strong>Bizum a l'import total</strong> al numero <strong class="bizum-highlight">+34 665 638 350</strong>
-            indicant el teu nom com a concepte.</p>
+            indicant el teu nom com a concepte.
+          </p>
           <div class="bizum-box">
             <div class="bizum-icon">&#x1F4B8;</div>
             <div class="bizum-text">
@@ -570,7 +674,8 @@
           <div class="bizum-reminder">
             <strong>Recorda fer el Bizum per confirmar</strong>
             <p>Envia <strong id="successTotal">0,00 &euro;</strong> al <strong>+34 665 638 350</strong><br />Concepte:
-              <em id="successNom">el teu nom</em></p>
+              <em id="successNom">el teu nom</em>
+            </p>
           </div>
           <p class="success-contact">Dubtes: <a href="mailto:hola@browniesandco.cat">hola@browniesandco.cat</a></p>
           <button class="btn-primary" id="btnResetAll">Fer una altra comanda</button>
@@ -817,6 +922,38 @@
       document.querySelectorAll(".brownie-card, .step-card, .pillar, .stat, .nos-text").forEach(function (el) {
         el.classList.add("fade-observe");
         observer.observe(el);
+      });
+      // ── Tallers: pestanyes ──
+      document.querySelectorAll(".tallers-tab").forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          var tabName = this.getAttribute("data-tab");
+          document.querySelectorAll(".tallers-tab").forEach(function (t) { t.classList.remove("active"); });
+          document.querySelectorAll(".tallers-panel").forEach(function (p) {
+            p.classList.remove("active");
+            p.querySelectorAll("video").forEach(function (v) { v.pause(); v.currentTime = 0; });
+            p.querySelectorAll(".video-card").forEach(function (c) { c.classList.remove("playing"); });
+          });
+          this.classList.add("active");
+          document.getElementById("panel-" + tabName).classList.add("active");
+        });
+      });
+
+      // ── Tallers: play/pause en clicar la targeta ──
+      document.querySelectorAll(".video-card").forEach(function (card) {
+        card.addEventListener("click", function () {
+          var video = this.querySelector("video");
+          if (!video) return;
+          if (video.paused) {
+            document.querySelectorAll(".video-card video").forEach(function (v) { v.pause(); v.currentTime = 0; });
+            document.querySelectorAll(".video-card").forEach(function (c) { c.classList.remove("playing"); });
+            video.play();
+            this.classList.add("playing");
+          } else {
+            video.pause();
+            video.currentTime = 0;
+            this.classList.remove("playing");
+          }
+        });
       });
 
     }); // fi DOMContentLoaded
