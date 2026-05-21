@@ -62,44 +62,58 @@ function refreshModalTotals() {
 }
 
 function confirmOrder() {
-  // Validació bàsica
-  const nom     = document.getElementById('fNom')?.value.trim();
-  const telefon = document.getElementById('fTelefon')?.value.trim();
-  const email   = document.getElementById('fEmail')?.value.trim();
-  const data    = document.getElementById('fData')?.value;
+  var nom     = document.getElementById("fNom").value.trim();
+  var telefon = document.getElementById("fTelefon").value.trim();
+  var email   = document.getElementById("fEmail").value.trim();
+  var data    = document.getElementById("fData").value;
 
   if (!nom || !telefon || !email || !data) {
-    showToast('Si us plau, omple tots els camps obligatoris *');
+    showToast("Si us plau, omple tots els camps obligatoris *");
     return;
   }
-  if (!email.includes('@')) {
-    showToast('El correu electrònic no és vàlid');
+  if (!email.includes("@")) {
+    showToast("El correu electrònic no és vàlid");
     return;
   }
 
-  // Generar número de comanda
-  const orderNum = '#BC-' + String(Math.floor(1000 + Math.random() * 9000));
-  const total    = calcCartTotal();
+  var orderNum = "#BC-" + String(Math.floor(1000 + Math.random() * 9000));
 
-  // ── Simulació d'enviament de correu ──
-  // En producció, aquí es faria una crida a un backend (PHP mailer, Node.js, Formspree, etc.)
-  // que enviaria la informació de la comanda al correu de la pastisseria.
-  // Exemple de dades que s'enviarien:
-  const orderData = buildOrderData(nom, telefon, email, data, orderNum, total);
-  console.log('📧 Comanda per enviar al correu de la pastisseria:', orderData);
-  // sendOrderEmail(orderData); ← funció del backend
+  var productes = cart.map(function(item) {
+    return item.name + " x" + item.qty + " — " + formatPrice(item.price) + " | " + item.detail;
+  }).join("\n");
 
-  // Mostrar pantalla d'èxit
-  document.getElementById('orderNum').textContent = orderNum;
-  document.getElementById('successTotal').textContent = formatPrice(total);
-  document.getElementById('successNom').textContent = nom;
+  var formData = new FormData();
+  formData.append("form-name",        "comanda");
+  formData.append("numero_comanda",   orderNum);
+  formData.append("nom",              nom);
+  formData.append("email",            email);
+  formData.append("telefon",          telefon);
+  formData.append("tipus_lliurament", deliveryType === "envio" ? "Enviament a domicili (+3,50€)" : "Recollida a casa");
+  formData.append("adreca",           deliveryType === "envio"
+    ? (document.getElementById("fAdreca").value + ", " + document.getElementById("fCP").value + " " + document.getElementById("fCiutat").value)
+    : "C/ Vint-i-vuit, 35 · Camarles");
+  formData.append("data_lliurament",  data);
+  formData.append("franja",           document.getElementById("fFranja").value);
+  formData.append("productes",        productes);
+  formData.append("total",            formatPrice(calcCartTotal()));
+  formData.append("notes",            document.getElementById("fNotes").value || "Cap");
 
-  document.getElementById('checkoutForm').style.display = 'none';
-  document.getElementById('successScreen').style.display = 'block';
-
-  // Netejar cistella
-  cart = [];
-  updateCartUI();
+  fetch("/", {
+    method: "POST",
+    body: formData
+  })
+  .then(function() {
+    document.getElementById("orderNum").textContent    = orderNum;
+    document.getElementById("successTotal").textContent = formatPrice(calcCartTotal());
+    document.getElementById("successNom").textContent  = nom;
+    document.getElementById("checkoutForm").style.display  = "none";
+    document.getElementById("successScreen").style.display = "block";
+    cart = [];
+    updateCartUI();
+  })
+  .catch(function() {
+    showToast("Error enviant la comanda. Prova de nou.");
+  });
 }
 
 function buildOrderData(nom, telefon, email, data, orderNum, total) {
