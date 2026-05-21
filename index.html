@@ -28,7 +28,12 @@
 </head>
 
 <body>
-
+  <!-- FORMULARI OCULT NETLIFY -->
+  <form name="contacte" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="nom" />
+    <input type="email" name="email" />
+    <input type="text" name="missatge" />
+  </form>
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
@@ -526,12 +531,12 @@
           <div class="cd-item">&#x1F550; Dl&ndash;Ds: 9:00&ndash;20:00 &middot; Dg: 10:00&ndash;14:00</div>
         </div>
       </div>
-      <form class="contact-form" id="contactForm" method="POST" data-netlify="true" >
-        <div class="form-row"><label>Nom</label><input type="text" placeholder="El teu nom" required /></div>
-        <div class="form-row"><label>Correu electrònic</label><input type="email" placeholder="elteucorreu@gmail.com"
-            required /></div>
-        <div class="form-row"><label>Missatge</label><textarea placeholder="En què et puc ajudar?" required></textarea>
-        </div>
+      <form class="contact-form" id="contactForm" name="contacte" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contacte" />
+        <input type="hidden" name="bot-field" />
+        <div class="form-row"><label>Nom</label><input type="text" name="nom" placeholder="El teu nom" required /></div>
+        <div class="form-row"><label>Correu electrònic</label><input type="email" name="email" placeholder="nom@correu.cat" required /></div>
+        <div class="form-row"><label>Missatge</label><textarea name="missatge" placeholder="En què et puc ajudar?" required></textarea></div>
         <button type="submit" class="btn-primary full">Enviar missatge</button>
       </form>
     </div>
@@ -892,8 +897,20 @@
       // Contacte
       document.getElementById("contactForm").addEventListener("submit", function (e) {
         e.preventDefault();
-        showToast("Missatge enviat! T'escrivim aviat");
-        this.reset();
+        var form = this;
+        var formData = new FormData(form);
+      
+        fetch("/", {
+          method: "POST",
+          body: formData
+        })
+        .then(function() {
+          showToast("Missatge enviat! T'escrivim aviat 💌");
+          form.reset();
+        })
+        .catch(function() {
+          showToast("Error enviant el missatge. Prova de nou.");
+        });
       });
 
       // Escape
