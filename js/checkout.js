@@ -90,7 +90,9 @@ function confirmOrder() {
   formData.append("telefon",          telefon);
   formData.append("tipus_lliurament", deliveryType === "envio" ? "Enviament a domicili (+3,50€)" : "Recollida a casa");
   formData.append("adreca",           deliveryType === "envio"
-    ? (document.getElementById("fAdreca").value + ", " + document.getElementById("fCP").value + " " + document.getElementById("fCiutat").value)
+    ? ((document.getElementById("fAdreca") ? document.getElementById("fAdreca").value : "") + ", " +
+       (document.getElementById("fCP") ? document.getElementById("fCP").value : "") + " " +
+       (document.getElementById("fCiutat") ? document.getElementById("fCiutat").value : ""))
     : "C/ Vint-i-vuit, 35 · Camarles");
   formData.append("data_lliurament",  data);
   formData.append("franja",           document.getElementById("fFranja").value);
@@ -184,11 +186,11 @@ function resetAll() {
   brownieState.qty       = 1;
 
   // Restablir botons del builder
-  document.querySelectorAll('.opt').forEach(b => b.classList.remove('selected'));
-  document.querySelectorAll('.opt[onclick*="Xocolata Negra"]').forEach(b => b.classList.add('selected'));
-  document.querySelectorAll('.opt[onclick*="Sense cobertura"]').forEach(b => b.classList.add('selected'));
-  document.querySelectorAll('.opt[onclick*="Sucós"]').forEach(b => b.classList.add('selected'));
-  document.querySelectorAll('.top-btn').forEach(b => b.classList.remove('selected'));
+  document.querySelectorAll('.opt').forEach(function(b) { b.classList.remove('selected'); });
+  document.querySelectorAll('.opt[data-name="Xocolata Negra"]').forEach(function(b) { b.classList.add('selected'); });
+  document.querySelectorAll('.opt[data-name="Sense cobertura"]').forEach(function(b) { b.classList.add('selected'); });
+  document.querySelectorAll('.opt[data-name="Sucos (Estandard)"]').forEach(function(b) { b.classList.add('selected'); });
+  document.querySelectorAll('.top-btn').forEach(function(b) { b.classList.remove('selected'); });
 
   const qtyEl = document.getElementById('qtyDisplay');
   if (qtyEl) qtyEl.textContent = '1';
