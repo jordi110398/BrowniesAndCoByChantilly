@@ -28,12 +28,26 @@
 </head>
 
 <body>
-  <!-- FORMULARI OCULT NETLIFY -->
+  <!-- FORMULARI DE CONTACTE OCULT NETLIFY -->
   <form name="contacte" netlify netlify-honeypot="bot-field" hidden>
     <input type="text" name="nom" />
     <input type="email" name="email" />
     <input type="text" name="missatge" />
   </form>
+  <!-- FORMULARI DE COMANDES OCULT NETLIFY -->
+<form name="comanda" netlify netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="numero_comanda" />
+  <input type="text" name="nom" />
+  <input type="email" name="email" />
+  <input type="tel" name="telefon" />
+  <input type="text" name="tipus_lliurament" />
+  <input type="text" name="adreca" />
+  <input type="text" name="data_lliurament" />
+  <input type="text" name="franja" />
+  <input type="text" name="productes" />
+  <input type="text" name="total" />
+  <input type="text" name="notes" />
+</form>
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
